@@ -1,0 +1,357 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core">
+    <h:head>
+        <meta charset="UTF-8"></meta>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge"></meta>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"></meta>
+        <title>Clientes y Proveedores</title>
+        <link href="css/internas.css" rel="stylesheet" type="text/css"/>
+        <script src="https://kit.fontawesome.com/bef1c1b97c.js" crossorigin="anonymous"></script>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous"></link>
+        <!-- CSS only -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+              integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous"></link>
+        <!-- JavaScript Bundle with Popper -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+                integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+        crossorigin="anonymous"></script>
+        <style type="text/css">
+
+            .frm{
+                width: 40%;
+                margin: auto;
+                padding: 0px;
+            }
+            .ul li{
+                list-style: none;
+                padding: 0;
+                margin: 0;
+            }
+            form li + li {
+                margin-top: 1em;
+            }
+            .input, textarea {
+                font: 1em source serif variable;
+                color: #ffffff;
+                width: 100px;
+                box-sizing: border-box;
+
+            }
+            .col-md-4 {
+                flex: 0 0 auto;
+                width: 150%;
+            }
+            .z{
+                color: #FFCB0E;
+                width: 100px;
+            }
+            label {
+                display: inline-block;
+                width: 80%;
+                text-align: left;
+            }
+            .enviar {
+                background-color: #FFCB0E;
+                border-block-color:#FFCB0E;
+                width: 90px;
+            }
+            .frm{
+                width: 450px;
+                height: 300px;
+                margin-top: 0px;
+                padding: 0px 0px;
+                color: white;
+                justify-content: center;
+                text-align: center;
+                align-items: center;
+
+            }
+            .form-login h3{
+                margin: 0;
+                text-align: center;
+                height: 40px;
+                margin-bottom: 30px;
+                border-bottom: 1px solid;
+                font-size: 20px;
+            }
+
+            .button{
+                width: 100%;
+                height:40px;
+                background: #FFCB0E;
+                border: none;
+                color: white;
+                margin-bottom: 50px;
+            }
+            .frm p{
+                height: 40px;
+                text-align: center;
+                border-bottom: 1px solid;
+            }
+            .frm a{
+                color: white;
+                text-decoration: none;
+                font-size:14px;
+            }
+            .frm:hover{
+                text-decoration: underline;
+            }
+
+        </style> 
+  <nav class="navbar navbar-dark bg-warning">
+            <a class="btn btn-primary" href="smart_energy_group_sas.xhtml" role="button">Regresar</a>
+            <div class="dropdown">
+                <a style="color: white" href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Cerrar Sesion</a>
+                <div class="dropdown-menu text-center">
+                    <a ><img src="img/iconos/icono_usuario2.png" height="80" width="80"></img></a><br>                  
+                        <a>Usuario</a></br>
+                    <a>Ejemplo@gmail.com</a>
+                    <div class="dropdown-divider"></div>
+                    <a href="smart_energy_group_sas.xhtml" class="dropdown-item">Salir</a>
+                </div>
+            </div> 
+        </nav>
+
+
+        <div class="row">
+            <div class="col" id="logo">
+                <span> <p align="left"><a href="smart_energy_group_sas.xhtml"><img src="img/logo/logo_color.png" height="100px" width="215px" id="logo1"/></a></p></span>
+            </div>
+
+            <div class="col"><form id="buscar" class="d-flex" role="search">
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"></input>
+                    <button class="btn btn-outline-success" type="submit">Search</button>
+                </form></div>
+
+        </div>   
+
+
+
+
+
+
+        <div id="header">
+            <ul class="nav" Style="background:rgb(0, 0, 0)" align="center">
+                <li><a href="smart_energy_group_sas.html">Inicio</a></li>
+                <li><a href="sobre_nosotros.html">Sobre Nosotros</a></li>
+                <li><a href="Inventario.html">Modulos</a>
+                    <ul class="dropdown-menu">
+                        <li>  <a class="dropdown-item" href="crear_producto.xhtml">Inventario</a></li>
+                        <li>  <a class="dropdown-item" href="clientes-proveedores.xhtml">Clientes y Proveedores</a></li>
+                        <li>  <a class="dropdown-item" href="CrearUsusario.xhtml">Usuarios</a></li>
+                        <li>   <a class="dropdown-item" href="#">Cartera</a></li>
+                        <li>   <a class="dropdown-item" href="#">Orden de compra</a>   </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">Páginas Error</a>
+
+                    <ul class="dropdown-menu">
+                        <li class="fondo">  <a class="dropdown-item" href="error_403.html" target="_blank">Error 403</a></li>
+                        <li class="fondo"><a class="dropdown-item" href="error_404.html" target="_blank"> Error 404</a></li>
+                        <li class="fondo"> <a class="dropdown-item" href="error_500.html" target="_blank">Error 500</a></li>
+
+                    </ul>
+                </li>
+                <li><a href="contactenos.html" target="_blank">Contacto</a>
+                    <ul class="dropdown-menu">
+                        <li class="fondo"><a href="pqrs.html" target="_blank">PQRS</a></li>
+                    </ul></li>
+            </ul>
+        </div>
+
+
+    </h:head>
+
+
+    <h:body >
+
+
+
+
+
+        <!--CONTENIDO-->
+        <div class="col-12" style="overflow:scroll; height: 900px">
+   
+            <div>
+                <img src="img/page_title/clientes.jpg" alt=""/>
+            </div>
+            <!-- AGREGUE AQUÍ EL CONTENIDO DE LA PAGINA-->
+
+            <!-- Gaes Section Heading-->
+            <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0" style="color:#FFCB0E">Listado de clientes y Proveedores</h2>
+
+            <!-- Icon Divider-->
+            <div class="divider-custom">
+                <div class="divider-custom-line"></div>
+                <div class="divider-custom-line"></div>
+            </div>
+            <!-- Person Grid Items-->
+            <div class="row justify-content-center">
+                <!-- Person Item 1-->
+                <div class="col-md-12 text-center">
+                    <div class="portfolio-item mx-auto" data-bs-toggle="modal" data-bs-target="#portfolioModal1">
+                        <div>
+                            <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
+                        </div>
+
+                        <table id="t-all" class="table">
+                            <thead class="thead-light">
+                                <tr>
+
+                                    <th>1er Nombre</th>
+                                    <th>2do Nombre</th>
+                                    <th>1er Apellido</th>
+                                    <th>2do Apellido</th>
+                                    <th>Razón Social</th>
+                                    <th>Tipo Dodumento</th>
+                                    <th>N°Documento</th>
+                                    <th>Teléfono</th>
+                                    <th>Correo</th>
+                                    <th>Clave</th>
+                                    <th>Actualizar</th>
+                                    <th>Eliminar</th>
+                                </tr>
+                            </thead>
+                            <tbody class="thead-body">
+                                <c:forEach items="#{controladorCrearUsuario.allUsuario}" var="cliente">
+                                    <tr>
+
+                                        <td>#{cliente.pnom}</td>
+                                        <td>#{cliente.snom}</td>
+                                        <td>#{cliente.pape}</td>
+                                        <td>#{cliente.sape}</td>
+                                        <td>#{cliente.rs}</td>
+                                        <td>#{cliente.tipoDocumento}</td>
+                                        <td>#{cliente.numDoc}</td>
+                                        <td>#{cliente.tel}</td>
+                                        <td>#{cliente.correo}</td>
+                                        <td>#{cliente.clave}</td>
+                                        <td><h:form>
+                                                <h:commandButton action="#{controladorCrearUsuario.selectUpdate(cliente)}" class="btn btn-outline-success mt-2" value="Actualizar"></h:commandButton>
+                                            </h:form></td>
+                                        <td> <h:form>
+                                                <h:commandButton action="#{controladorCrearUsuario.delete(cliente)}" class="btn btn-outline-danger mt-2" value="Eliminar"></h:commandButton>
+                                            </h:form></td>
+                                    </tr>
+                                </c:forEach>
+                            </tbody>
+                        </table>
+                        <br/>
+                        <div class="col-12 col-md-6">
+                            <h3>Actualizar Clientes y Proveedores</h3>
+                            <h:form>
+                                <div class="row">
+                                    <div class="col-6">
+                                        <label>Primer Nombre</label>
+                                        <h:inputText value="#{controladorCrearUsuario.usuario.pnom}" class="form-control"></h:inputText>
+                                    </div>
+                                    <div class="col-6">
+                                        <label>Segundo Nombre</label>
+                                        <h:inputText value="#{controladorCrearUsuario.usuario.snom}" class="form-control"></h:inputText>
+                                    </div>
+                                    <div class="col-6">
+                                        <label>Primer Apellido</label>
+                                        <h:inputText value="#{controladorCrearUsuario.usuario.pape}" class="form-control"></h:inputText>
+                                    </div>
+                                    <div class="col-6">
+                                        <label>Segundo Apellido</label>
+                                        <h:inputText value="#{controladorCrearUsuario.usuario.sape}" class="form-control"></h:inputText>
+                                    </div>
+                                    <div class="col-6">
+                                        <label>Razon social</label>
+                                        <h:inputText value="#{controladorCrearUsuario.usuario.rs}" class="form-control"></h:inputText>
+                                    </div>
+                                    <div class="col-6">
+                                        <label>Tipo de Documento</label>
+                                        <h:selectOneMenu value="#{controladorCrearUsuario.tipoDocSelect}" class="form-select">
+                                            <f:selectItems value="#{controladorCrearUsuario.allTipoDoc}" var="tipodoc" itemValue="#{tipodoc.codTdoc}" itemLabel="#{tipodoc.tipoDoc}"></f:selectItems>
+                                        </h:selectOneMenu>
+                                    </div>
+                                    <div class="col-6">
+                                        <label>Numero de Documento</label>
+                                        <h:inputText value="#{controladorCrearUsuario.usuario.numDoc}" class="form-control"></h:inputText>
+                                    </div>
+                                    <div class="col-6">
+                                        <label>Telefono</label>
+                                        <h:inputText value="#{controladorCrearUsuario.usuario.tel}" class="form-control"></h:inputText>
+                                    </div> 
+                                    <div class="col-6">
+                                        <label>Correo</label>
+                                        <h:inputText value="#{controladorCrearUsuario.usuario.correo}" class="form-control"></h:inputText>
+                                    </div>
+                                    <div class="col-6">
+                                        <label>Contraseña</label>
+                                        <h:inputText value="#{controladorCrearUsuario.usuario.clave}" class="form-control"></h:inputText>
+                                    </div>
+                                    <div class="col-12 d-flex justify-content-center mt-4">
+                                        <h:commandButton action="#{controladorCrearUsuario.save()}" class="btn btn-outline-success" value="Guardar"></h:commandButton>
+                                    </div>
+                                </div>
+                            </h:form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.min.js" integrity="sha384-IDwe1+LCz02ROU9k972gdyvl+AESN10+x7tBKgc9I5HFtuNz0wWnPclzo6p9vxnk" crossorigin="anonymous"></script>
+        <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
+        <script type="text/javascript" src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
+        <script type="text/javascript" src="https://cdn.datatables.net/buttons/2.2.3/js/dataTables.buttons.min.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/pdfmake.min.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"></script>
+        <script type="text/javascript" src="https://cdn.datatables.net/buttons/2.2.3/js/buttons.html5.min.js"></script>
+        <script type="text/javascript" src="https://cdn.datatables.net/buttons/2.2.3/js/buttons.print.min.js"></script> 
+
+        <script>
+            $(document).ready(function () {
+                $('#t-all').DataTable({
+                    dom: 'Bfrtip',
+                    buttons: [
+                        'copy', 'csv', 'excel', 'pdf', 'print'
+                    ]
+                });
+            });</script>
+
+        <footer class="pie-pagina">
+            <div class="grupo-1">
+                <div class="box">
+                    <figure>
+                        <a href="#">
+                            <img src="img/logo/logo_negro.svg" height="140px" width="200px" alt="logo" align="left"></img>
+                        </a>
+                    </figure>
+                </div>
+                <div class="box">
+                    <h2><b>SMART ENERGY GROUP S.A.S</b></h2>
+                    <p align="center" style="color: #000000;"><b>Bogotá:</b> Cel. 311 831 74 39 Calle 24 b # 27a - 41 Barrio Panamericano <b>Medellín:</b> Tel. (601) 704 61 66 Carrera 51 # 41 - 144 Lc 158 Barrio La Alpujarra <br/><b>Tel.</b> 311 571 4567<br/><b>E-mail</b> comercial@smeg.com.co</p>
+
+                </div>
+                <div class="box">
+                    <h2><b>REDES SOCIALES</b></h2>
+                    <div class="red-social">
+                        <a href="https://www.facebook.com/diana.rodriguezamado/" target="_blank" class="fa fa-facebook"></a>
+                        <a href="https://www.instagram.com/carolinarodriguez6680/?hl=es-la" target="_blank" class="fa fa-instagram"></a>
+                        <a href="#" target="_blank" class="fa fa-twitter"></a>
+                        <a href="#" target="_blank" class="fa fa-youtube"></a>
+                    </div>
+                    <br/>
+                    <p><a href="mapa-de-navegacion.html" target="_blank"><b>MAPA DEL SITIO</b></a></p>
+                </div>
+            </div>
+            <div class="grupo-2">
+                <small>&copy; 2022 <b>SmartEnergy Group S.A.S</b> - Todos los derechos reservados</small>
+            </div>
+        </footer>
+
+    </h:body>
+</html>
+

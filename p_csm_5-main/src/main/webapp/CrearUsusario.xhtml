@@ -1,0 +1,137 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Crear Usuario</title>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"></link>
+    </h:head>
+    <h:body>
+        <nav class="navbar navbar-dark bg-warning">
+            <a class="btn btn-primary" href="smart_energy_group_sas.xhtml" role="button">Regresar</a>
+            <div class="dropdown">
+                <a style="color: white" href="smart_energy_group_sas.xhtml" class="nav-link dropdown-toggle" data-toggle="dropdown">Cerrar Sesion</a>
+                <div class="dropdown-menu text-center">
+                    <a ><img src="img/iconos/icono_usuario2.png" height="80" width="80"></img></a><br>                  
+                        <a>Usuario</a></br>
+                    <a>Ejemplo@gmail.com</a>
+                    <div class="dropdown-divider"></div>
+                    <a href="smart_energy_group_sas.xhtml" class="dropdown-item">Salir</a>
+                </div>
+            </div> 
+        </nav>
+        <div class="container">
+            
+            <div class="row">
+                <div class="col-12 col-auto">
+                    <h3>Usuarios</h3>
+                    <h:dataTable class="table table-striped table-hover" value="#{controladorCrearUsuario.allUsuario}" var="usuario">
+                        <h:column class="col-12">
+                            #{usuario.pnom}
+                        </h:column>   
+                        <h:column class="col-12">
+                            #{usuario.snom}
+                        </h:column>
+                        <h:column class="col-12">
+                            #{usuario.pape}
+                        </h:column>
+                        <h:column class="col-12">
+                            #{usuario.sape}
+                        </h:column>     
+                        <h:column class="col-12">
+                            #{usuario.rs}
+                        </h:column>
+                        <h:column class="col-12">
+                            #{usuario.tipoDocumento}
+                        </h:column>
+                        <h:column class="col-12">
+                            #{usuario.numDoc}
+                        </h:column>
+                        <h:column class="col-12">
+                            #{usuario.tel}
+                        </h:column>
+                        <h:column class="col-12">
+                            #{usuario.correo}
+                        </h:column>
+                        <h:column class="col-12">
+                            #{usuario.clave}
+                        </h:column>
+                        <h:column>
+                            <h:form>
+                                <h:commandButton action="#{controladorCrearUsuario.selectUpdate(usuario)}" class="btn btn-outline-success mt-2" value="Actualizar"></h:commandButton>
+                            </h:form>
+                        </h:column>
+                        <h:column>
+                            <h:form>
+                                <h:commandButton action="#{controladorCrearUsuario.delete(usuario)}" class="btn btn-outline-danger mt-2" value="Eliminar"></h:commandButton>
+                            </h:form>
+                        </h:column>
+                    </h:dataTable>
+                </div>
+                
+                
+                
+                <div class="col-12 col-md-3">
+                    <h3>Crear Usuarios</h3>
+                    <h:form>
+                        <div class="row">
+                            <div class="col-12">
+                                <label>Primer Nombre</label>
+                                <h:inputText value="#{controladorCrearUsuario.usuario.pnom}" class="form-control"></h:inputText>
+                            </div>
+                            <div class="col-12">
+                                <label>Segundo Nombre</label>
+                                <h:inputText value="#{controladorCrearUsuario.usuario.snom}" class="form-control"></h:inputText>
+                            </div>
+                            <div class="col-12">
+                                <label>Primer Apellido</label>
+                                <h:inputText value="#{controladorCrearUsuario.usuario.pape}" class="form-control"></h:inputText>
+                            </div>
+                            <div class="col-12">
+                                <label>Segundo Apellido</label>
+                                <h:inputText value="#{controladorCrearUsuario.usuario.sape}" class="form-control"></h:inputText>
+                            </div>
+                            <div class="col-12">
+                                <label>Razon social</label>
+                                <h:inputText value="#{controladorCrearUsuario.usuario.rs}" class="form-control"></h:inputText>
+                            </div>
+                            <div class="col-12">
+                                <label>Tipo de Documento</label>
+                                <h:selectOneMenu value="#{controladorCrearUsuario.tipoDocSelect}" class="form-select">
+                                    <f:selectItems value="#{controladorCrearUsuario.allTipoDoc}" var="tipodoc" itemValue="#{tipodoc.codTdoc}" itemLabel="#{tipodoc.tipoDoc}"></f:selectItems>
+                                </h:selectOneMenu>
+                            </div>
+                            <div class="col-12">
+                                <label>Numero de Documento</label>
+                                <h:inputText value="#{controladorCrearUsuario.usuario.numDoc}" class="form-control"></h:inputText>
+                            </div>
+                            <div class="col-12">
+                                <label>Telefono</label>
+                                <h:inputText value="#{controladorCrearUsuario.usuario.tel}" class="form-control"></h:inputText>
+                            </div> 
+                            <div class="col-12">
+                                <label>Correo</label>
+                                <h:inputText value="#{controladorCrearUsuario.usuario.correo}" class="form-control"></h:inputText>
+                            </div>
+                            <div class="col-12">
+                                <label>Contraseña</label>
+                                <h:inputText value="#{controladorCrearUsuario.usuario.clave}" class="form-control"></h:inputText>
+                            </div>
+                            <div class="col-12 d-flex justify-content-center mt-3">
+                                <h:commandButton action="#{controladorCrearUsuario.save()}" class="btn btn-outline-success" value="Guardar"></h:commandButton>
+                            </div>
+                        </div>
+                    </h:form>
+                </div>
+            </div>
+        </div>     
+        
+        
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+    </h:body>
+</html>
+

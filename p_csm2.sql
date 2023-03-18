@@ -1,0 +1,1 @@
+SELECT * FROM induceda.detalle_insumo;
